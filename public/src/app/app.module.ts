@@ -10,13 +10,20 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { ListComponent } from "./list/list.component";
 
 // Services
 import { UserService } from "./user.service";
-import { ListComponent } from './list/list.component';
+import { TimeService } from "./time.service";
+import { AppointmentService } from "./appointment.service";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DashboardComponent, ListComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    ListComponent
+  ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
@@ -24,7 +31,7 @@ import { ListComponent } from './list/list.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [UserService],
+  providers: [UserService, AppointmentService, TimeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

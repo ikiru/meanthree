@@ -11,9 +11,7 @@ export class LoginComponent implements OnInit {
   newUser = {};
   errors: string[] = [];
 
-  constructor(private _userService: UserService, private router: Router) {
-    console.log(localStorage);
-  }
+  constructor(private _userService: UserService, private router: Router) {}
 
   ngOnInit() {}
 
