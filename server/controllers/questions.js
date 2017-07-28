@@ -33,6 +33,8 @@ update: function(req, res){
 }
 
 
+// ********************* sample code *****************************
+
 // .populate ({
 //   path: 'answer',
 //   model: 'Answer',
@@ -41,3 +43,22 @@ update: function(req, res){
 //     model:'User'
 //   }
 // // })
+
+
+// delete: function(req, res){
+//   Question.findbyIdAndRemove(req.params.id, function(err, question){
+//     if (err) {
+//       return res.json(err);
+//     }
+//     return res.json(question);
+//   })
+// }
+//
+
+// updateVotes: function(req, res){
+//     Question.findByIdAndUpdate(req.params.id, {$inc:{answers:{votes:1}}},
+//       {new:true}, (err, answer) => {
+//           if(err){return res.json(err)}
+//           return res.json(question);
+//     })
+// }

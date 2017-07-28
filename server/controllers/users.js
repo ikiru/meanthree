@@ -25,12 +25,21 @@ module.exports = {
 
   // Create a user controller => sends to DB
   create: function(req, res) {
-    User.create(req.body, function(err, user) {
+    User.findOne({ name: req.body.name }, (err, user) => {
       if (err) {
         return res.json(err);
+      } else if (!user) {
+        User.create(req.body, (err, user) => {
+          if (err) {
+            return res.json(err);
+          }
+          req.session.user_id = user._id; //Save user into session
+          return res.json(user);
+        });
+      } else {
+        req.session.user_id = user._id; //Save user into session
+        return res.json(user);
       }
-      req.session.user_id = user._id;
-      return res.json(user);
     });
   },
 
@@ -52,3 +61,15 @@ module.exports = {
     return res.json({ status: true });
   }
 };
+
+// show(req, res){
+//     Question.findById(req.params.id)
+//     .populate('user')
+//     .populate({
+//       path: 'answers',
+//       model: 'Answer',
+//       populate: {
+//         path: 'user',
+//         model: 'User'
+//       }
+//     })

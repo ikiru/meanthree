@@ -10,13 +10,25 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AddComponent } from "./add/add.component";
 
 // Services
 import { UserService } from "./user.service";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DashboardComponent],
-  imports: [BrowserModule, NgbModule.forRoot(), FormsModule, HttpModule],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    AddComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgbModule.forRoot(),
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
+  ],
   providers: [UserService],
   bootstrap: [AppComponent]
 })

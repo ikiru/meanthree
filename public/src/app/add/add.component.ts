@@ -1,19 +1,39 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../user.service";
 import { Router } from "@angular/router";
 
+import { UserService } from "../user.service";
+
+import "rxjs";
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  selector: "app-add",
+  templateUrl: "./add.component.html",
+  styleUrls: ["./add.component.css"]
 })
-export class LoginComponent implements OnInit {
-  newUser = {};
+export class AddComponent implements OnInit {
+  currentUser = {};
   errors: string[] = [];
 
   constructor(private _userService: UserService, private router: Router) {}
 
   ngOnInit() {}
+  // ****************************** all comp **************************
+
+  getCurrentUser() {
+    this.currentUser = this._userService.getCurrentUser;
+  }
+
+  isLoggedIn() {
+    if (this._userService.getCurrentUser() == null) {
+      this.router.navigateByUrl("/");
+    }
+  }
+
+  logout() {
+    this._userService.logout();
+    this.router.navigateByUrl("/");
+  }
+
+  // ******************************************************************
 
   create() {
     this.errors = [];

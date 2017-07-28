@@ -19,7 +19,7 @@ export class UserService {
 
   logout() {
     localStorage.removeItem("currentUser");
-    return this._http.delete("/sessions").map(data => data.json()).toPromise();
+    // return this._http.delete("/sessions").map(data => data.json()).toPromise();
   }
 
   setCurrentUser(user) {
