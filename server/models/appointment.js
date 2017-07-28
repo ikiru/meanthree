@@ -21,7 +21,8 @@ let AppointmentSchema = new mongoose.Schema(
 
     //  name of the user who liked it
     complain: {
-      type: String
+      type: String,
+      minlength: [10, "Complaints must be at least 10 characters long"]
     }
   },
   { timestamps: true }
