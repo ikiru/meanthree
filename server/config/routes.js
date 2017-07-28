@@ -1,6 +1,6 @@
 let path = require("path");
 let Users = require("./../controllers/users");
-let Users = require("./../controllers/users");
+let Appointments = require("./../controllers/appointments");
 
 module.exports = function(app) {
   // User  routing
@@ -12,10 +12,10 @@ module.exports = function(app) {
   // Session routing
   app.get("/session", Users.session);
 
-  // question routing
-  app.get("/question", Questions.index);
-  app.post("/question", Questions.create);
-  app.patch("/question/:id", Questions.update);
+  // appointment routing
+  app.get("/appointment", Appointments.index);
+  app.post("/appointment", Appointments.create);
+  app.patch("/appointment/:id", Appointments.delete);
 
   // Path to the Angular Routing
   app.all("*", function(req, res, next) {
