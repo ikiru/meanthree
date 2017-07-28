@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { UserService } from "../user.service";
+import { AppointmentService } from "../Appointment.service";
 
 import "rxjs";
 

@@ -11,23 +11,22 @@ export class LoginComponent implements OnInit {
   newUser = {};
   errors: string[] = [];
 
-  constructor(private _userService: UserService, private router: Router) {}
+  constructor(private _userService: UserService, private router: Router) {
+    console.log(localStorage);
+  }
 
   ngOnInit() {}
 
-  create() {
-    this.errors = [];
+  createUser() {
     return this._userService
       .create(this.newUser)
       .then(user => {
         console.log(user);
         if (user.errors) {
-          for (let key in user.errors) {
-            let error = user.error[key];
-            this.errors.push(error.message);
-          }
+          //create front-end error messages
         } else {
           this._userService.setCurrentUser(user);
+          //redirect to message-board
           this.router.navigateByUrl("dashboard");
         }
       })

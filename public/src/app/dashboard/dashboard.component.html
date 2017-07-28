@@ -1,21 +1,24 @@
 <div class="container">
   <h2>New Appointment</h2>
 
-      <form (submit)="createAppointment(newAppointment)">
-        <span class="label">Date: </span>
-        <input type="date" name="" value="">
+  <form (submit)="createAppointment(newAppointment)">
+    <span class="label">Date: </span>
+    <input type="date" name="" value="">
 
-        <span class="label">Time:</span>
-        <select class="" name=[(ngModel)]="newAppointment.name">
-          <option value="">8:00 am</option>
-          <option value="">9:00 am</option>
-          <option value="">10:00 am</option>
-          <option value="">11:00 am</option>
-          <option value="">12:00 pm</option>
-          <option value="">1:00 pm</option>
-          <option value="">2:00 pm</option>
-          <option value="">3:00 pm</option>
-          <option value="">4:00 pm</option>
-        </select>
-      </form>
+    <span class="label">Time:</span>
+    <select class="" [(ngModel)]="newAppointment.name">
+      <option value="">8:00 am</option>
+      <option value="">9:00 am</option>
+      <option value="">10:00 am</option>
+      <option value="">11:00 am</option>
+      <option value="">12:00 pm</option>
+      <option value="">1:00 pm</option>
+      <option value="">2:00 pm</option>
+      <option value="">3:00 pm</option>
+      <option value="">4:00 pm</option>
+    </select>
+
+    <span class="label">Complain:</span>
+    <input type="textarea" name=[(ngModel)]="newAppointment.complain">
+  </form>
 </div>

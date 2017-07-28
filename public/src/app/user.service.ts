@@ -12,7 +12,7 @@ export class UserService {
 
   login(user) {
     return this._http
-      .post("/sessions", user)
+      .post("/session", user)
       .map(data => data.json())
       .toPromise();
   }

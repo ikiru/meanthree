@@ -4,8 +4,8 @@ let Appointments = require("./../controllers/appointments");
 
 module.exports = function(app) {
   // User  routing
-  app.get("/user", Users.index);
-  app.post("/user", Users.create);
+  app.get("/users", Users.index);
+  app.post("/users", Users.create);
   app.get("/user/:id", Users.show);
   app.delete("/user/:id", Users.logout);
 
