@@ -35,22 +35,22 @@ export class AddComponent implements OnInit {
 
   // ******************************************************************
 
-  create() {
-    this.errors = [];
-    return this._userService
-      .create(this.newUser)
-      .then(user => {
-        console.log(user);
-        if (user.errors) {
-          for (let key in user.errors) {
-            let error = user.error[key];
-            this.errors.push(error.message);
-          }
-        } else {
-          this._userService.setCurrentUser(user);
-          this.router.navigateByUrl("dashboard");
-        }
-      })
-      .catch(err => console.log(err));
-  }
+  //   create() {
+  //     this.errors = [];
+  //     return this._userService
+  //       .create(this.newUser)
+  //       .then(user => {
+  //         console.log(user);
+  //         if (user.errors) {
+  //           for (let key in user.errors) {
+  //             let error = user.error[key];
+  //             this.errors.push(error.message);
+  //           }
+  //         } else {
+  //           this._userService.setCurrentUser(user);
+  //           this.router.navigateByUrl("dashboard");
+  //         }
+  //       })
+  //       .catch(err => console.log(err));
+  //   }
 }

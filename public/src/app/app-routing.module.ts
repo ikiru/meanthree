@@ -8,7 +8,7 @@ import { AddComponent } from "./add/add.component";
 // Routes
 const routes: Routes = [
   { path: "", pathMatch: "full", component: LoginComponent },
-  { path: "dashboard", component: DashboardComponent }
+  { path: "dashboard", component: DashboardComponent },
   { path: "add", component: AddComponent }
 ];
 @NgModule({
