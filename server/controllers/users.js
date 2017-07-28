@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 let User = mongoose.model("User");
-let Appointment = mongoose.model("Appointment")
+let Appointment = mongoose.model("Appointment");
 
 module.exports = {
   // Setting the session variable
@@ -62,15 +62,3 @@ module.exports = {
     return res.json({ status: true });
   }
 };
-
-showapp(req, res){
-    User.find({})
-    .populate('user')
-    .populate({
-      path: 'appointment',
-      model: 'Appointment',
-      populate: {
-        path: 'user',
-        model: 'User'
-      }
-    })
