@@ -10,18 +10,13 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { AddComponent } from "./add/add.component";
 
 // Services
 import { UserService } from "./user.service";
+import { ListComponent } from './list/list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    DashboardComponent,
-    AddComponent
-  ],
+  declarations: [AppComponent, LoginComponent, DashboardComponent, ListComponent],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
